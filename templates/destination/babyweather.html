@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baby Packing List - Weather Based</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #fef6e4, #e0f7fa);
+      font-family: 'Segoe UI', sans-serif;
+      min-height: 100vh;
+    }
+    header {
+      background: #ff80ab;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+    nav a {
+      color: white;
+      margin-left: 15px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .form-box {
+      background: rgba(255,255,255,0.9);
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+    .card {
+      background: rgba(255,255,255,0.95);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    .btn-custom {
+      background-color: #4fc3f7;
+      border: none;
+      color: white;
+      font-weight: 500;
+      border-radius: 8px;
+    }
+    .btn-custom:hover {
+      background-color: #0288d1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">👶 Baby Packing Buddy</div>
+    <nav>
+      <a href="#">🏠 Home</a>
+      <a href="#">🌍 Destination</a>
+      <a href="#">📚 Books</a>
+      <a href="#">ℹ️ About</a>
+      <a href="#">🚪 Logout</a>
+    </nav>
+  </header>
+
+  <div class="container my-5">
+    <h2 class="text-center mb-4">🍼 Baby Packing List by Weather</h2>
+
+    <!-- Selection Form -->
+    <div class="form-box mx-auto" style="max-width:600px;">
+      <div class="mb-3">
+        <label class="form-label fw-bold">Select Destination</label>
+        <select id="destination" class="form-select">
+          <option value="">-- Choose Destination --</option>
+          <option value="beach">🏖 Beach</option>
+          <option value="forest">🌲 Forest</option>
+          <option value="desert">🏜 Desert</option>
+          <option value="mountain">⛰ Mountain</option>
+          <option value="lake">🏞 Lake</option>
+          <option value="snowvalley">❄ Snow Valley</option>
+          <option value="ingeneral">🌍 In General</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label class="form-label fw-bold">Select Weather</label>
+        <select id="weather" class="form-select">
+          <option value="">-- Choose Weather --</option>
+          <option value="summer">☀ Summer</option>
+          <option value="winter">❄ Winter</option>
+          <option value="rainy">🌧 Rainy</option>
+          <option value="autumn">🍂 Autumn</option>
+        </select>
+      </div>
+      <button class="btn btn-custom w-100" onclick="showPackingList()">Show Packing List</button>
+    </div>
+
+    <!-- Packing List -->
+    <div id="packingList" class="mt-5"></div>
+  </div>
+
+  <script>
+    const babyPackingData = {
+      beach: {
+        summer: {
+          "Clothing": [
+            ["👕","Light cotton clothes to keep baby cool"],
+            ["🩳","Extra shorts and rompers"],
+            ["👒","Sunhat to protect from heat"]
+          ],
+          "Care": [
+            ["🧴","Baby-safe sunscreen (SPF 50+)"],
+            ["🍼","Plenty of water/milk bottles"],
+            ["🧻","Wet wipes and diapers"]
+          ],
+          "Essentials": [
+            ["🏖","Baby float or swim ring"],
+            ["🧸","Favorite toy for beach comfort"],
+            ["🛏","Portable shade tent for naps"]
+          ]
+        },
+        winter: {
+          "Clothing": [
+            ["🧥","Light jacket for breezy evenings"],
+            ["🧦","Socks for warmth"],
+          ],
+          "Care": [
+            ["🧴","Moisturizer for dry skin"],
+            ["🍼","Thermos for warm milk"]
+          ],
+          "Essentials": [
+            ["🧣","Light blanket"],
+            ["🛏","Portable sleeping mat"]
+          ]
+        },
+        rainy: {
+          "Clothing": [
+            ["🧥","Rain jacket"],
+            ["👢","Waterproof shoes"]
+          ],
+          "Care": [
+            ["🧼","Hand sanitizer"],
+            ["🧴","Mosquito cream"]
+          ],
+          "Essentials": [
+            ["☂","Baby umbrella"],
+            ["🛏","Plastic mat for sitting"]
+          ]
+        },
+        autumn: {
+          "Clothing": [
+            ["🧢","Cap for breeze"],
+            ["🧥","Sweater"]
+          ],
+          "Care": [
+            ["🧴","Moisturizer"],
+            ["🍼","Warm milk bottle"]
+          ]
+        }
+      },
+
+      forest: {
+        summer: {
+          "Clothing": [
+            ["👕","Breathable cotton outfits"],
+            ["🧢","Sun cap"]
+          ],
+          "Care": [
+            ["🧴","Baby-safe mosquito repellent"],
+            ["🍼","Extra water supply"]
+          ],
+          "Essentials": [
+            ["🏕","Baby tent for shade"],
+            ["🧸","Comfort toy"]
+          ]
+        },
+        winter: {
+          "Clothing": [
+            ["🧥","Thermal wear"],
+            ["🧤","Woolen gloves and socks"]
+          ],
+          "Care": [
+            ["🍼","Thermos for warm milk"],
+            ["🧴","Moisturizer and cold cream"]
+          ],
+          "Essentials": [
+            ["🔥","Portable baby heater"],
+            ["🛏","Sleeping bag"]
+          ]
+        },
+        rainy: {
+          "Clothing": [
+            ["🧥","Raincoat"],
+            ["👢","Gumboots"]
+          ],
+          "Care": [
+            ["🧼","Antiseptic wipes"],
+            ["🧴","Mosquito repellent"]
+          ]
+        },
+        autumn: {
+          "Clothing": [
+            ["🧢","Light cap"],
+            ["🧥","Sweater for evenings"]
+          ],
+          "Care": [
+            ["🍼","Warm milk"],
+            ["🧴","Moisturizer"]
+          ]
+        }
+      },
+
+      desert: {
+        summer: {
+          "Clothing": [
+            ["👕","Full-sleeve cotton clothes"],
+            ["🧢","Cap to avoid sun"]
+          ],
+          "Care": [
+            ["🍼","Lots of fluids"],
+            ["🧴","High SPF baby sunscreen"]
+          ],
+          "Essentials": [
+            ["🏜","Portable shade tent"],
+            ["🧸","Toy for comfort"]
+          ]
+        },
+        winter: {
+          "Clothing": [
+            ["🧥","Warm clothes for chilly nights"],
+            ["🧣","Woolen scarf"]
+          ],
+          "Care": [
+            ["🍼","Thermos for milk"],
+            ["🧴","Moisturizer"]
+          ]
+        },
+        rainy: {
+          "Clothing": [
+            ["🧥","Light jacket"],
+            ["🧢","Cap"]
+          ],
+          "Care": [
+            ["🧼","Sanitizer"],
+            ["🍼","Water bottles"]
+          ]
+        },
+        autumn: {
+          "Clothing": [
+            ["👕","Light sweater"],
+            ["🧦","Socks"]
+          ],
+          "Care": [
+            ["🧴","Moisturizer"]
+          ]
+        }
+      },
+
+      mountain: {
+        summer: {
+          "Clothing": [
+            ["👕","Breathable clothes"],
+            ["🧢","Cap"]
+          ]
+        },
+        winter: {
+          "Clothing": [
+            ["🧥","Thermal wear and jacket"],
+            ["🧤","Woolen gloves and socks"]
+          ],
+          "Care": [
+            ["🍼","Thermos for warm milk"],
+            ["🧴","Moisturizer & cold cream"]
+          ],
+          "Essentials": [
+            ["🧸","Comfort toy"],
+            ["🛏","Baby blanket or sleeping bag"]
+          ]
+        },
+        rainy: {
+          "Clothing": [
+            ["🧥","Raincoat"],
+            ["👢","Waterproof shoes"]
+          ],
+          "Care": [
+            ["🧼","Antiseptic wipes"],
+            ["🧴","Mosquito cream"]
+          ]
+        },
+        autumn: {
+          "Clothing": [
+            ["🧥","Light sweater"],
+            ["🧢","Cap for breeze"]
+          ]
+        }
+      },
+
+      lake: {
+        summer: {
+          "Clothing": [
+            ["👕","Light cotton dress"],
+            ["🩳","Shorts"]
+          ],
+          "Care": [
+            ["🍼","Water bottles"],
+            ["🧴","Sunscreen"]
+          ]
+        },
+        winter: {
+          "Clothing": [
+            ["🧥","Warm jacket"],
+            ["🧣","Cap and gloves"]
+          ],
+          "Care": [
+            ["🍼","Thermos"],
+            ["🧴","Cold cream"]
+          ]
+        },
+        rainy: {
+          "Clothing": [
+            ["🧥","Raincoat"],
+            ["👢","Waterproof shoes"]
+          ],
+          "Care": [
+            ["🧼","Wipes"],
+            ["🧴","Mosquito repellent"]
+          ]
+        },
+        autumn: {
+          "Clothing": [
+            ["🧥","Sweater"],
+            ["🧢","Cap"]
+          ]
+        }
+      },
+
+      snowvalley: {
+        summer: {
+          "Clothing": [
+            ["👕","Light clothes for day"],
+            ["🧥","Jacket for night"]
+          ]
+        },
+        winter: {
+          "Clothing": [
+            ["🧥","Heavy woolen jacket"],
+            ["🧤","Woolen gloves and cap"]
+          ],
+          "Care": [
+            ["🍼","Thermos"],
+            ["🧴","Moisturizer"]
+          ]
+        },
+        rainy: {
+          "Clothing": [
+            ["🧥","Raincoat"],
+            ["👢","Shoes"]
+          ]
+        },
+        autumn: {
+          "Clothing": [
+            ["🧥","Sweater"],
+            ["🧢","Cap"]
+          ]
+        }
+      },
+
+      ingeneral: {
+        summer: {
+          "Clothing": [
+            ["👕","Light cotton clothes"],
+            ["🧢","Cap"]
+          ]
+        },
+        winter: {
+          "Clothing": [
+            ["🧥","Warm sweater"],
+            ["🧦","Socks"]
+          ]
+        },
+        rainy: {
+          "Clothing": [
+            ["🧥","Raincoat"],
+            ["👢","Waterproof shoes"]
+          ]
+        },
+        autumn: {
+          "Clothing": [
+            ["🧥","Light sweater"],
+            ["🧢","Cap"]
+          ]
+        }
+      }
+    };
+
+    function showPackingList() {
+      const destination = document.getElementById("destination").value;
+      const weather = document.getElementById("weather").value;
+      const container = document.getElementById("packingList");
+      container.innerHTML = "";
+
+      if (!destination || !weather) {
+        container.innerHTML = "<p class='text-danger text-center'>⚠ Please select both destination and weather</p>";
+        return;
+      }
+
+      const data = babyPackingData[destination]?.[weather];
+      if (!data) {
+        container.innerHTML = "<p class='text-danger text-center'>⚠ No packing list found</p>";
+        return;
+      }
+
+      for (const [section, items] of Object.entries(data)) {
+        const card = document.createElement("div");
+        card.className = "card p-3";
+
+        const title = document.createElement("h4");
+        title.textContent = section;
+        card.appendChild(title);
+
+        const ul = document.createElement("ul");
+        items.forEach(([icon, desc]) => {
+          const li = document.createElement("li");
+          li.innerHTML = `<span>${icon}</span> ${desc}`;
+          ul.appendChild(li);
+        });
+        card.appendChild(ul);
+
+        container.appendChild(card);
+      }
+    }
+  </script>
+</body>
+</html>

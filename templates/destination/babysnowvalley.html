@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baby Snow Valley Packing List</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+body {
+    background: url('https://images.unsplash.com/photo-1516569426116-70b3b2f34521?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    color: #222;
+}
+
+header {
+    background: rgba(255,105,180,0.9);
+    color: white;
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+header .logo { font-size: 24px; font-weight: bold; }
+nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: 500; }
+nav a:hover { text-decoration: underline; }
+
+.content-box {
+    background: rgba(255,255,255,0.25);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    backdrop-filter: blur(4px);
+}
+
+.category-card {
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(4px);
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    border-left: 6px solid #87CEFA; 
+    color: #222;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.category-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,0,0,0.25); }
+.category-card h4 { color: #87CEFA; font-weight: 600; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; text-shadow: 0px 1px 2px rgba(0,0,0,0.2); }
+
+.custom-btn { background: #00BFFF; border: none; font-weight: 600; padding: 10px 20px; border-radius: 10px; transition: 0.3s; color: white; margin: 5px; }
+.custom-btn:hover { background: #009ACD; transform: translateY(-2px); }
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">MyPacking Buddy</div>
+  <nav>
+    <a href="#">🏠 Home</a>
+    <a href="#">🌍 Destination</a>
+    <a href="#">📚 Books</a>
+    <a href="#">🧳 User Trips</a>
+    <a href="#">ℹ️ About</a>
+    <a href="#">🚪 Logout</a>
+  </nav>
+</header>
+
+<div class="container my-5">
+  <div class="content-box">
+    <h2 class="text-center mb-4">🍼 Baby Snow Valley Packing List</h2>
+
+    <div id="packingList"></div>
+
+    <div class="text-center mt-4">
+      <a href="destination.html" class="custom-btn">🔙 Back to Destination</a>
+      <a href="books_snowvalley.html" class="custom-btn">📚 View Books</a>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const babySnowPackingList = {
+  "🧸 Clothing & Wear":[
+    {item:"Warm Onesies / Rompers", desc:"Keep baby cozy in cold.", icon:"👕"},
+    {item:"Winter Hat / Beanie", desc:"Protect head from cold.", icon:"🧢"},
+    {item:"Thermal Socks & Booties", desc:"Keep feet warm.", icon:"🧦"},
+    {item:"Warm Jacket / Sweater", desc:"Layer for extra warmth.", icon:"🧥"}
+  ],
+  "🧴 Toiletries":[
+    {item:"Baby Sunscreen SPF 50", desc:"Protect skin from snow glare.", icon:"🧴"},
+    {item:"Baby Wipes", desc:"Clean anytime.", icon:"🧻"},
+    {item:"Diaper Cream", desc:"Prevent rashes.", icon:"🍼"},
+    {item:"Moisturizing Lotion", desc:"Hydrate skin in dry cold.", icon:"🧴"}
+  ],
+  "🎒 Essentials":[
+    {item:"Baby Blanket / Towel", desc:"Comfort & warmth.", icon:"🛏️"},
+    {item:"Feeding Bottles / Water", desc:"Hydration & feeding.", icon:"🍼"},
+    {item:"Baby Food / Snacks", desc:"Nutrition.", icon:"🍌"},
+    {item:"Portable First Aid Kit", desc:"Emergency preparedness.", icon:"🩹"},
+    {item:"Baby Toys", desc:"Keep entertained.", icon:"🧸"}
+  ]
+};
+
+const container = document.getElementById("packingList");
+for(const [section,list] of Object.entries(babySnowPackingList)){
+  const card = document.createElement("div");
+  card.className = "category-card";
+
+  const title = document.createElement("h4");
+  title.textContent = section;
+  card.appendChild(title);
+
+  const ul = document.createElement("ul");
+  list.forEach(obj=>{
+    const li = document.createElement("li");
+    li.innerHTML = `<input type="checkbox" class="form-check-input me-2"> ${obj.icon} ${obj.item}`;
+    const desc = document.createElement("div");
+    desc.className = "item-desc";
+    desc.textContent = obj.desc;
+    li.appendChild(desc);
+    ul.appendChild(li);
+  });
+
+  card.appendChild(ul);
+  container.appendChild(card);
+}
+</script>
+</body>
+</html>

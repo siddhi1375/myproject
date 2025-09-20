@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose Gender</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff0f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header */
+    header {
+      background: rgba(255, 51, 153, 0.7); /* Transparent Pink */
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+    nav li {
+      margin-left: 25px;
+    }
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffccff;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 20px;
+      text-align: center;
+    }
+    h2 {
+      color: #ff3399;
+      margin-bottom: 30px;
+    }
+
+    /* Gender Buttons */
+    .gender-options {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .gender-btn {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 250px;
+      height: 200px;
+      border-radius: 20px;
+      background: #ffe6f0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      cursor: pointer;
+      text-decoration: none;
+      color: #ff3399;
+      font-size: 22px;
+      font-weight: bold;
+      transition: transform 0.3s, background 0.3s;
+    }
+    .gender-btn:hover {
+      transform: scale(1.05);
+      background: #ffccdd;
+    }
+    .gender-btn span {
+      font-size: 50px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">MyPacking Buddy</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">🏠 Home</a></li>
+        <li><a href="destination.html">🌍 Destination</a></li>
+        <li><a href="books.html">📚 Books</a></li>
+        <li><a href="user_trips.html">🧳 User Trips</a></li>
+        <li><a href="tips.html">💡 Tips</a></li>
+        <li><a href="about.html">ℹ About</a></li>
+        <li><a href="logout.html">🚪 Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h2>who are you packing for</h2>
+    <div class="gender-options">
+      <a href="male.html" class="gender-btn">
+        <span>👨</span>
+        Male
+      </a>
+      <a href="female.html" class="gender-btn">
+        <span>👩</span>
+        Female
+      </a>
+      <a href="baby.html" class="gender-btn">
+        <span>👶</span>
+        infants
+      </a>
+    </div>
+  </div>
+</body>
+</html>

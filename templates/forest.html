@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forest Packing Checklist</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=100') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.55); /* semi-transparent */
+      padding: 30px;
+      border-radius: 25px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+      backdrop-filter: blur(5px);
+    }
+
+    h2 {
+      text-align: center;
+      color: #2a9d8f; /* forest green */
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+    }
+
+    h4 {
+      color: #264653; /* dark green */
+      margin-top: 25px;
+      border-bottom: 2px solid #264653;
+      padding-bottom: 5px;
+      font-size: 1.5rem;
+    }
+
+    .box {
+      background: rgba(255, 255, 255, 0.45); /* slightly transparent box */
+      border-radius: 15px;
+      padding: 20px;
+      margin: 15px 0;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      margin: 10px 0;
+      padding: 12px 18px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.35); /* item box transparency */
+      transition: all 0.3s ease;
+    }
+
+    li:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    .item-title {
+      font-weight: 600;
+      color: #2a9d8f;
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+    }
+
+    .item-desc {
+      font-size: 0.95rem;
+      color: #222;
+    }
+
+    .btn-books, .btn-back {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 25px;
+      font-size: 1rem;
+      border-radius: 10px;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    .btn-books {
+      background-color: #2a9d8f;
+    }
+    .btn-books:hover {
+      background-color: #1f776f;
+    }
+
+    .btn-back {
+      background-color: #f4a261;
+    }
+    .btn-back:hover {
+      background-color: #e09b4a;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🌲 Forest Packing Checklist</h2>
+
+    <!-- For 1 Day Trip -->
+    <h4>For 1 Day Trip</h4>
+    <div class="box">
+      <ul>
+        <li>
+          <div class="item-title">👕 Quick-Dry Clothing</div>
+          <div class="item-desc">Breathable, moisture-wicking shirts and pants. 1 set for a day hike.</div>
+        </li>
+        <li>
+          <div class="item-title">🥾 Waterproof Hiking Boots</div>
+          <div class="item-desc">Protects feet from wet terrain and provides stability on trails.</div>
+        </li>
+        <li>
+          <div class="item-title">💧 Hydration Pack / Water Bottle</div>
+          <div class="item-desc">2 liters of water for the day. Hands-free pack recommended.</div>
+        </li>
+        <li>
+          <div class="item-title">🦟 Mosquito Repellent</div>
+          <div class="item-desc">Protects against insect bites during forest walks.</div>
+        </li>
+        <li>
+          <div class="item-title">🔦 Headlamp / Flashlight</div>
+          <div class="item-desc">For early morning or late evening hikes. Essential for safety.</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- For 2 Days Trip -->
+    <h4>For 3 Days Trip</h4>
+    <div class="box">
+      <ul>
+        <li>
+          <div class="item-title">👕 Quick-Dry Clothing (3 Sets)</div>
+          <div class="item-desc">Additional sets for multi-day comfort and hygiene.</div>
+        </li>
+        <li>
+          <div class="item-title">🥾 Waterproof Hiking Boots</div>
+          <div class="item-desc">Extra protection and comfort for prolonged treks.</div>
+        </li>
+        <li>
+          <div class="item-title">💧 Hydration Pack (5 Liters)</div>
+          <div class="item-desc">Water supply for three days to ensure hydration.</div>
+        </li>
+        <li>
+          <div class="item-title">🛠️ Survival Kit</div>
+          <div class="item-desc">First aid, whistle, emergency blanket, multi-tool for safety.</div>
+        </li>
+        <li>
+          <div class="item-title">🥗 Snacks / Energy Bars (3 Days)</div>
+          <div class="item-desc">Energy food sufficient for multi-day forest exploration.</div>
+        </li>
+        <li>
+          <div class="item-title">📡 GPS / Compass</div>
+          <div class="item-desc">Navigation tools to ensure safety and direction.</div>
+        </li>
+        <li>
+          <div class="item-title">🛏️ Lightweight Tent / Hammock</div>
+          <div class="item-desc">Provides shelter and comfort for overnight stays.</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- For More Than 3 Days -->
+    <h4>For More Than 2 Days</h4>
+    <div class="box">
+      <ul>
+        <li>
+          <div class="item-title">👕 Quick-Dry Clothing (Multiple Sets)</div>
+          <div class="item-desc">Enough clothing sets to maintain hygiene and comfort during extended trips.</div>
+        </li>
+        <li>
+          <div class="item-title">🥾 Waterproof Hiking Boots</div>
+          <div class="item-desc">Durable and reliable footwear for long-term forest exploration.</div>
+        </li>
+        <li>
+          <div class="item-title">💧 Hydration Pack (10 Liters)</div>
+          <div class="item-desc">Large water supply for several days. Ensures hydration at all times.</div>
+        </li>
+        <li>
+          <div class="item-title">🦟 Mosquito Repellent</div>
+          <div class="item-desc">Continuous protection from insects throughout extended trips.</div>
+        </li>
+        <li>
+          <div class="item-title">🌧️ Rain Gear / Poncho</div>
+          <div class="item-desc">Protection from rain and wet conditions. Keeps you dry and comfortable.</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Books Category -->
+    <h4>📚 Books</h4>
+    <div class="box">
+      <ul>
+        <li>
+          <div class="item-title">Forest & Trekking Guides</div>
+          <div class="item-desc">Guides covering survival tips, flora & fauna, navigation, and adventure stories.</div>
+          <a href="books.html" class="btn-books">Click to View Books</a>
+        </li>
+      </ul>
+    </div>
+
+    <a href="{{ url_for('destination') }}" class="btn-back">⬅ Back to Destinations</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Packing Tips</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=100') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      padding: 40px 0;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 30px;
+      border-radius: 25px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      backdrop-filter: blur(5px);
+    }
+    h2 {
+      text-align: center;
+      color: #e76f51;
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+    .category-btn {
+      width: 100%;
+      text-align: left;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #fff;
+      background-color: #0077b6;
+      border: none;
+      border-radius: 12px;
+      padding: 12px 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .category-btn:hover {
+      background-color: #023e8a;
+    }
+    .tips-list {
+      display: none;
+      background: rgba(255,255,255,0.9);
+      border-radius: 12px;
+      padding: 15px 20px;
+      margin-bottom: 20px;
+    }
+    .tips-list ul {
+      list-style: disc inside;
+      margin: 0;
+      padding-left: 10px;
+    }
+    .tips-list ul li {
+      margin: 8px 0;
+      font-size: 1rem;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🌏 Packing Tips</h2>
+
+    <!-- Beach Tips -->
+    <button class="category-btn" onclick="toggleTips('beach')">🏖️ Beach Tips</button>
+    <div class="tips-list" id="beach">
+      <ul>
+        <li>Pack sunscreen with high SPF to avoid sunburn.</li>
+        <li>Bring a wide-brimmed hat and sunglasses for UV protection.</li>
+        <li>Carry a reusable water bottle to stay hydrated.</li>
+        <li>Pack light, breathable clothing for comfort.</li>
+        <li>Include waterproof sandals or flip-flops.</li>
+        <li>Bring a small beach towel or mat.</li>
+      </ul>
+    </div>
+
+    <!-- Desert Tips -->
+    <button class="category-btn" onclick="toggleTips('desert')">🏜️ Desert Tips</button>
+    <div class="tips-list" id="desert">
+      <ul>
+        <li>Wear light-colored, loose clothing to stay cool.</li>
+        <li>Carry at least 3–4 liters of water per person per day.</li>
+        <li>Use sunglasses and a scarf to protect from sand and sun.</li>
+        <li>Apply sunscreen frequently, especially on face and neck.</li>
+        <li>Bring electrolyte tablets to avoid dehydration.</li>
+        <li>Wear breathable, sturdy footwear for walking on sand.</li>
+      </ul>
+    </div>
+
+    <!-- Forest Tips -->
+    <button class="category-btn" onclick="toggleTips('forest')">🌲 Forest Tips</button>
+    <div class="tips-list" id="forest">
+      <ul>
+        <li>Wear long sleeves and pants to protect from insects.</li>
+        <li>Carry insect repellent to avoid bites.</li>
+        <li>Pack waterproof boots for muddy trails.</li>
+        <li>Bring a rain jacket in case of sudden showers.</li>
+        <li>Carry a map or GPS device for navigation.</li>
+        <li>Take a small first-aid kit for emergencies.</li>
+      </ul>
+    </div>
+
+    <!-- Lake & River Tips -->
+    <button class="category-btn" onclick="toggleTips('lake-river')">🏞️ Lake & River Tips</button>
+    <div class="tips-list" id="lake-river">
+      <ul>
+        <li>Bring water shoes or sandals with good grip.</li>
+        <li>Pack quick-dry clothing and towels.</li>
+        <li>Carry snacks and a water bottle for energy.</li>
+        <li>Use sunscreen to protect from reflection off water.</li>
+        <li>Bring insect repellent for areas near water.</li>
+        <li>Always check weather conditions before swimming.</li>
+      </ul>
+    </div>
+
+    <!-- Snow Valley Tips -->
+    <button class="category-btn" onclick="toggleTips('snowvalley')">❄️ Snow Valley Tips</button>
+    <div class="tips-list" id="snowvalley">
+      <ul>
+        <li>Wear insulated layers, including thermal base layers.</li>
+        <li>Use waterproof gloves, jackets, and snow boots.</li>
+        <li>Protect face and eyes with scarves and goggles.</li>
+        <li>Carry hand warmers and extra socks.</li>
+        <li>Stay hydrated with warm beverages.</li>
+        <li>Always inform someone about your route before trekking.</li>
+      </ul>
+    </div>
+
+    <!-- Mountain Tips -->
+    <button class="category-btn" onclick="toggleTips('mountain')">⛰️ Mountain Tips</button>
+    <div class="tips-list" id="mountain">
+      <ul>
+        <li>Wear sturdy hiking boots with ankle support.</li>
+        <li>Carry a backpack with water and energy snacks.</li>
+        <li>Bring a map, compass, or GPS for navigation.</li>
+        <li>Pack layers to adjust to changing temperatures.</li>
+        <li>Take a small first-aid and survival kit.</li>
+        <li>Inform someone about your trek plan before leaving.</li>
+      </ul>
+    </div>
+
+    <!-- In General Tips -->
+    <button class="category-btn" onclick="toggleTips('general')">📦 General Tips</button>
+    <div class="tips-list" id="general">
+      <ul>
+        <li>Always check weather conditions before traveling.</li>
+        <li>Pack essential documents and ID securely.</li>
+        <li>Keep a portable charger and power bank.</li>
+        <li>Carry a small first-aid kit for emergencies.</li>
+        <li>Make a checklist to avoid forgetting items.</li>
+        <li>Inform family or friends of your travel plans.</li>
+      </ul>
+    </div>
+    
+  </div>
+
+  <script>
+    function toggleTips(categoryId) {
+      const el = document.getElementById(categoryId);
+      if (el.style.display === 'block') {
+        el.style.display = 'none';
+      } else {
+        el.style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>

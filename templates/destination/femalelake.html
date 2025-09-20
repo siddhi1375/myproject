@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Female Lake Packing List</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb') no-repeat center center/cover;
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    header {
+      background: #20B2AA; /* Light Sea Green */
+      color: white;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+    header .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Main Content Box - Highly Transparent */
+    .content-box {
+      background: rgba(255,255,255,0.3);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      margin-bottom: 40px;
+      backdrop-filter: blur(6px);
+    }
+
+    /* Category Cards - Transparent */
+    .category-card {
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(4px);
+      border-radius: 20px;
+      padding: 25px;
+      margin-bottom: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-left: 6px solid #20B2AA;
+      color: #222;
+    }
+    .category-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    }
+    .category-card h4 {
+      color: #008080;
+      font-weight: 600;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+    }
+    .category-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .category-card li {
+      padding: 8px 0;
+      font-size: 15px;
+      border-bottom: 1px dashed rgba(255,255,255,0.4);
+    }
+    .category-card li:last-child {
+      border-bottom: none;
+    }
+
+    /* Age form */
+    #ageForm {
+      max-width: 400px;
+      margin: 20px auto;
+      text-align: center;
+    }
+    #ageForm input {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      width: 70%;
+      margin-right: 10px;
+    }
+    #ageForm button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      background: #20B2AA; /* Light Sea Green */
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    #ageForm button:hover {
+      background: #008080;
+    }
+
+    /* Bottom buttons */
+    .custom-btn {
+      background: #20B2AA;
+      border: none;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 10px;
+      transition: 0.3s;
+      color: white;
+      margin: 5px;
+    }
+    .custom-btn:hover {
+      background: #008080;
+      transform: translateY(-2px);
+    }
+
+    /* Age note */
+    .note-box {
+      background: #e0ffff;
+      border-left: 5px solid #20B2AA;
+      padding: 10px 15px;
+      border-radius: 8px;
+      margin: 20px auto;
+      max-width: 500px;
+      font-size: 14px;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">MyPacking Buddy</div>
+    <nav>
+      <a href="#">🏠 Home</a>
+      <a href="#">🌍 Destination</a>
+      <a href="#">📚 Books</a>
+      <a href="#">🧳 User Trips</a>
+      <a href="#">ℹ️ About</a>
+      <a href="#">🚪 Logout</a>
+    </nav>
+  </header>
+
+  <div class="container my-5">
+    <div class="content-box">
+      <h2 class="text-center mb-4">👩 Female Lake_river Packing List</h2>
+
+      <!-- Age Form -->
+      <div id="ageForm">
+        <input type="number" id="userAge" placeholder="Enter Your Age" min="1" max="100">
+        <button onclick="showPackingList()">Show List</button>
+      </div>
+
+      <!-- Age note -->
+      <div class="note-box text-center">
+        ℹ️ You can enter age between <strong>13 - 100</strong>.
+      </div>
+
+      <!-- Packing List Display -->
+      <div id="packingList"></div>
+
+      <!-- Buttons -->
+      <div class="text-center mt-4">
+        <a href="destination.html" class="custom-btn">🔙 Back to Destination</a>
+        <a href="books_lake.html" class="custom-btn">📚 View Lake Books</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const femalePackingList = {
+      teen: {
+        "👗 Clothing": ["T-shirt", "Shorts", "Flip Flops", "Cap"],
+        "🧴 Toiletries": ["Sunscreen SPF 50", "Lip Balm", "Wet Wipes"],
+        "🏞️ Lake Essentials": ["Water Bottle", "Sunglasses", "Backpack", "Beach Towel"]
+      },
+      adult: {
+        "👗 Clothing": ["Tops", "Shorts / Light Pants", "Sandals", "Sun Hat"],
+        "🧴 Toiletries": ["Sunscreen SPF 50+", "Lip Balm", "Wet Wipes", "Hand Sanitizer"],
+        "🏞️ Lake Essentials": ["Backpack", "Water Bottle", "Sunglasses", "Towel"]
+      },
+      senior: {
+        "👗 Clothing": ["Comfortable Top", "Light Pants", "Slip-on Shoes", "Hat"],
+        "🧴 Toiletries": ["Sunscreen SPF 50+", "Moisturizer", "Lip Balm"],
+        "🏞️ Lake Essentials": ["Water Bottle", "Backpack", "Sunglasses", "Towel"]
+      }
+    };
+
+    function getAgeCategory(age) {
+      if(age >= 13 && age <= 19) return "teen";
+      else if(age >= 20 && age <= 59) return "adult";
+      else if(age >= 60 && age <= 100) return "senior";
+      else return null;
+    }
+
+    function showPackingList() {
+      const age = parseInt(document.getElementById("userAge").value);
+      const container = document.getElementById("packingList");
+      container.innerHTML = "";
+
+      if(isNaN(age) || age < 1 || age > 100){
+        container.innerHTML = "<p class='text-danger text-center'>⚠ Please enter a valid age (1-100)</p>";
+        return;
+      }
+
+      const category = getAgeCategory(age);
+      if(!category) {
+        container.innerHTML = "<p class='text-danger text-center'>⚠ Age must be at least 13 for packing list</p>";
+        return;
+      }
+
+      const items = femalePackingList[category];
+
+      for(const [section, list] of Object.entries(items)) {
+        const card = document.createElement("div");
+        card.className = "category-card";
+
+        const title = document.createElement("h4");
+        title.textContent = section;
+        card.appendChild(title);
+
+        const ul = document.createElement("ul");
+        list.forEach(item => {
+          const li = document.createElement("li");
+          li.textContent = "✔ " + item;
+          ul.appendChild(li);
+        });
+        card.appendChild(ul);
+
+        container.appendChild(card);
+      }
+      container.scrollIntoView({behavior: "smooth"});
+    }
+  </script>
+</body>
+</html>

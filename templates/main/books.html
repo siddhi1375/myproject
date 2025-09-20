@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Packing Buddy - Books</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Caveat:wght@600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background: url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .navbar {
+      background: rgba(0, 0, 0, 0.4) !important;
+      backdrop-filter: blur(6px);
+    }
+    .navbar .nav-link {
+      color: white !important;
+      margin-left: 15px;
+      transition: color 0.3s;
+    }
+    .navbar .nav-link:hover { color: #ffccff !important; }
+    .navbar-brand { font-weight: bold; font-size: 1.5rem; color: white !important; }
+
+    .category-btn {
+      width: 200px;
+      height: 120px;
+      font-size: 1.2rem;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .category-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+      text-decoration: none;
+      color: inherit;
+    }
+    .travel-heading { font-family: 'Pacifico', cursive; }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{{ url_for('dashboard') }}">My Packing Buddy</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('dashboard') }}">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('destination') }}">Destinations</a></li>
+          <li class="nav-item"><a class="nav-link active" href="{{ url_for('books') }}">Books</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('user_trips') }}">User Trips</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
+          <li class="nav-item"><a class="nav-link text-danger fw-bold" href="{{ url_for('logout') }}">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Categories Section -->
+  <div class="container d-flex flex-column justify-content-center align-items-center min-vh-100">
+    <h1 class="mb-5 text-white display-3 travel-heading">Choose Your Travel Category</h1>
+    <div class="row g-4 justify-content-center">
+
+      <div class="col-md-4 d-flex justify-content-center">
+        <a href="{{ url_for('beach_books') }}" class="btn category-btn text-dark" style="background-color: #ffb6c1;">
+          <i class="bi bi-umbrella fs-1"></i> <br> Beach
+        </a>
+      </div>
+
+      <div class="col-md-4 d-flex justify-content-center">
+        <a href="{{ url_for('desert_books') }}" class="btn category-btn text-dark" style="background-color: #ffc107;">
+          <i class="bi bi-sun fs-1"></i> <br> Desert
+        </a>
+      </div>
+
+      <div class="col-md-4 d-flex justify-content-center">
+        <a href="{{ url_for('lake_river_books') }}" class="btn category-btn text-white" style="background-color: #007bff;">
+          <i class="bi bi-droplet fs-1"></i> <br> Lake & River
+        </a>
+      </div>
+
+      <div class="col-md-4 d-flex justify-content-center">
+        <a href="{{ url_for('forest_books') }}" class="btn category-btn text-white" style="background-color: #228B22;">
+          <i class="bi bi-tree fs-1"></i> <br> Forest
+        </a>
+      </div>
+
+      <div class="col-md-4 d-flex justify-content-center">
+        <a href="{{ url_for('mountain_books') }}" class="btn category-btn text-white" style="background-color: #8B4513;">
+          <i class="bi bi-triangle fs-1"></i> <br> Mountain
+        </a>
+      </div>
+
+      <div class="col-md-4 d-flex justify-content-center">
+        <a href="{{ url_for('snowvalley_books') }}" class="btn category-btn text-white" style="background-color: #ff1493;">
+          <i class="bi bi-suitcase fs-1"></i> <br> Snowvalley
+        </a>
+      </div>
+
+      <div class="col-md-4 d-flex justify-content-center">
+        <a href="{{ url_for('general_books') }}" class="btn category-btn text-white" style="background-color: #6a5acd;">
+          <i class="bi bi-globe fs-1"></i> <br> General
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

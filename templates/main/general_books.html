@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Books - My Packing Buddy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .navbar-brand {
+            font-weight: bold;
+            color: #ff6b6b !important;
+        }
+        .book-card img {
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .book-title {
+            text-align: center;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #343a40;
+        }
+        .book-card:hover {
+            transform: scale(1.05);
+            transition: 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">My Packing Buddy</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="destinations.html">Destination</a></li>
+            <li class="nav-item"><a class="nav-link active" href="generalbooks.html">Books</a></li>
+            <li class="nav-item"><a class="nav-link" href="user_trips.html">User Trips</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="logout.html">Log Out</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container mt-5">
+        <h1 class="mb-4 text-center">Travel-Friendly Books</h1>
+        <div class="row g-4">
+            <!-- Book 1 -->
+            <div class="col-md-4 book-card">
+                <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f" alt="The Alchemist">
+                <p class="book-title">The Alchemist</p>
+            </div>
+            <!-- Book 2 -->
+            <div class="col-md-4 book-card">
+                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794" alt="Eat, Pray, Love">
+                <p class="book-title">Eat, Pray, Love</p>
+            </div>
+            <!-- Book 3 -->
+            <div class="col-md-4 book-card">
+                <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b" alt="On the Road">
+                <p class="book-title">On the Road</p>
+            </div>
+            <!-- Book 4 -->
+            <div class="col-md-4 book-card">
+                <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba" alt="Wild">
+                <p class="book-title">Wild</p>
+            </div>
+            <!-- Book 5 -->
+            <div class="col-md-4 book-card">
+                <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353" alt="The Beach">
+                <p class="book-title">The Beach</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

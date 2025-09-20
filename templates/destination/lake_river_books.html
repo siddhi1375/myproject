@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Lake & River Books</title>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root{
+      --brand1:#6f4e37;     /* earthy brown */
+      --brand2:#e76f51;     /* coral */
+      --brand3:#1e90ff;     /* lake blue */
+      --glass-bg: rgba(255,255,255,0.55);
+      --glass-box: rgba(255,255,255,0.45);
+      --item-bg: rgba(255,255,255,0.35);
+    }
+    body{
+      min-height:100vh;
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      padding:20px;
+      background-size:cover;
+      background-position:center;
+      background-attachment:fixed;
+    }
+    .glass{
+      max-width: 1100px;
+      margin: auto;
+      background: var(--glass-bg);
+      padding: 32px;
+      border-radius: 28px;
+      box-shadow: 0 12px 32px rgba(0,0,0,.25);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 2px solid rgba(255,255,255,.45);
+    }
+    h1{
+      font-weight:800;
+      letter-spacing:.3px;
+      text-align:center;
+      margin-bottom:22px;
+      text-shadow: .5px .5px 0 rgba(0,0,0,.15);
+    }
+    .lead{
+      text-align:center;
+      margin-bottom:28px;
+      color:#333;
+    }
+    .category-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+      gap:16px;
+    }
+    .cat-btn{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      padding:18px 18px;
+      border-radius:16px;
+      background: var(--glass-box);
+      border:1px solid rgba(255,255,255,.55);
+      font-weight:700;
+      box-shadow: 0 8px 18px rgba(0,0,0,.18);
+      transition:.25s ease;
+      backdrop-filter: blur(4px);
+    }
+    .cat-btn:hover{ transform: translateY(-2px); background: rgba(255,255,255,.6);}
+    .cat-btn span{ margin-left:8px;}
+    .book-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+      gap:18px;
+    }
+    .book-card{
+      background: var(--glass-box);
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.55);
+      box-shadow: 0 8px 20px rgba(0,0,0,.18);
+      display:flex;
+      flex-direction:column;
+    }
+    .book-card img{
+      width:100%;
+      height:200px;
+      object-fit:cover;
+      display:block;
+    }
+    .book-card .content{
+      padding:14px 16px 18px;
+    }
+    .book-title{
+      font-weight:800;
+      font-size:1.05rem;
+      margin:0 0 6px;
+      color:#111;
+    }
+    .book-author{
+      font-weight:600;
+      color:#6b7280; /* gray-500 */
+      margin-bottom:8px;
+      font-size:.95rem;
+    }
+    .book-desc{
+      font-size:.92rem;
+      color:#222;
+      line-height:1.45;
+      min-height:60px;
+    }
+    .btn-cta{
+      display:block;
+      width:100%;
+      text-align:center;
+      font-weight:800;
+      border-radius:12px;
+      padding:10px 16px;
+      text-decoration:none;
+      margin-top:12px;
+      background:#e9c46a;
+      color:#000;
+      border:1px solid #e9c46a;
+      transition:.25s ease;
+    }
+    .btn-cta:hover{ background:#f4a261; border-color:#f4a261;}
+    .btn-wide{
+      display:block;
+      width:100%;
+      padding:14px 18px;
+      text-align:center;
+      border-radius:14px;
+      font-weight:900;
+      font-size:1rem;
+      text-decoration:none;
+      color:#fff;
+      background:#f4a261;
+      border:1px solid #f4a261;
+      margin: 18px 0 6px;
+      box-shadow: 0 8px 18px rgba(0,0,0,.2);
+    }
+    .btn-wide:hover{ background:#e09b4a; border-color:#e09b4a;}
+    footer p{ text-align:center; font-size:.9rem; color:#333; margin:0; }
+  </style>
+
+</head>
+<body style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2000&auto=format&fit=crop');">
+  <div class="glass">
+    <h1 style="color:#1e90ff">🏞️ Lake & River Books</h1>
+    
+      <p class="lead">Curated reads for lake & river books—a blend of practical guides and page‑turners you can enjoy on the go.</p>
+      <div class="book-grid">
+        
+        <div class="book-card">
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200&auto=format&fit=crop" alt="A River Runs Through It">
+          <div class="content">
+            <h3 class="book-title">A River Runs Through It</h3>
+            <div class="book-author">by Norman Maclean</div>
+            <p class="book-desc">Graceful novella set against fly‑fishing and family in Montana.</p>
+            <a href="#" class="btn-cta">View Details</a>
+          </div>
+        </div>
+        
+        <div class="book-card">
+          <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=1200&auto=format&fit=crop" alt="The River of Doubt">
+          <div class="content">
+            <h3 class="book-title">The River of Doubt</h3>
+            <div class="book-author">by Candice Millard</div>
+            <p class="book-desc">Roosevelt’s perilous Amazon expedition—riveting narrative history.</p>
+            <a href="#" class="btn-cta">View Details</a>
+          </div>
+        </div>
+        
+        <div class="book-card">
+          <img src="https://images.unsplash.com/photo-1506947411487-a56738267384?q=80&w=1200&auto=format&fit=crop" alt="Down the Great Unknown">
+          <div class="content">
+            <h3 class="book-title">Down the Great Unknown</h3>
+            <div class="book-author">by Edward Dolnick</div>
+            <p class="book-desc">First descent of the Grand Canyon—whitewater, maps, and grit.</p>
+            <a href="#" class="btn-cta">View Details</a>
+          </div>
+        </div>
+        
+        <div class="book-card">
+          <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=1200&auto=format&fit=crop" alt="The Peregrine">
+          <div class="content">
+            <h3 class="book-title">The Peregrine</h3>
+            <div class="book-author">by J. A. Baker</div>
+            <p class="book-desc">Intense, luminous observations of landscape and waterbirds.</p>
+            <a href="#" class="btn-cta">View Details</a>
+          </div>
+        </div>
+        
+        <div class="book-card">
+          <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1200&auto=format&fit=crop" alt="The Wild Trees">
+          <div class="content">
+            <h3 class="book-title">The Wild Trees</h3>
+            <div class="book-author">by Richard Preston</div>
+            <p class="book-desc">Canopies, redwoods, and the explorers who climbed them.</p>
+            <a href="#" class="btn-cta">View Details</a>
+          </div>
+        </div>
+        
+        <div class="book-card">
+          <img src="https://images.unsplash.com/photo-1497290756760-23ac55edf36f?q=80&w=1200&auto=format&fit=crop" alt="The Death and Life of the Great Lakes">
+          <div class="content">
+            <h3 class="book-title">The Death and Life of the Great Lakes</h3>
+            <div class="book-author">by Dan Egan</div>
+            <p class="book-desc">How we transformed the Great Lakes—and how to save them.</p>
+            <a href="#" class="btn-cta">View Details</a>
+          </div>
+        </div>
+        
+      </div>
+    
+    <div class="row g-2 mt-3">
+      <div class="col-12 col-md-6">
+        <a class="btn-wide" href="books.html">⬅ Back to Book Categories</a>
+      </div>
+      <div class="col-12 col-md-6">
+        <a class="btn-wide" href="{{ url_for('destination') }}">⬅ Back to Destinations</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
